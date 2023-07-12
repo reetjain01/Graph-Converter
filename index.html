@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph Converter</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+      *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Signika Negative', sans-serif;
+    background-color:#212A3E;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:75px ;
+    background-color: rgb(34, 34, 72);
+  }
+  
+  nav ul{
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    list-style: none;
+    margin: 0px 23px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .active{
+    color: gold;
+  }
+
+  nav ul li a:hover{
+    color: gold;
+    font-size: 1.02rem;
+  }
+
+  .left{
+    font-size: 1.8rem;
+    color: gold;
+    font-weight: 700;
+  }
+
+
+/* -------------------FirstSection-------------------- */
+
+.firstSection{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 5px;
+  height: 80vh;
+}
+
+.firstSection .leftSection{
+  width: 55%;
+  margin-left: 10%;
+  font-size: 2.8rem;
+  color: white;
+}
+
+.firstSection .leftSection #element{
+  font-size: 2.5rem;
+}
+
+.rightSection img{
+  width: 80%;
+  margin-left: 15%;
+  margin-top: 75px;
+  /* margin: 4x 0px; */
+}
+
+.firstSection .leftSection .yellow{
+  color: gold;
+}
+
+.firstSection .leftSection .buttons{
+  padding: 15px;
+}
+
+.firstSection .leftSection .btn{
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #cfd8eb;
+  border-radius: 30px;
+}
+
+.firstSection .leftSection .btn a{
+  text-decoration: none;
+  color: black;
+}
+
+.firstSection .leftSection .btn:hover{
+  background-color:  #7d95c9;
+}
+
+.firstSection .leftSection .btn a:hover{
+  color: white;
+}
+
+
+
+/* ------------------------Second Section----------------------- */
+
+hr{
+  color: #cfd8eb;
+  border: 0.5px solid grey;
+  width: 85%;
+  margin: 0 7.5%;
+}
+
+.secondSection{
+  /* height: 100vh; */
+}
+
+.about-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85vh;
+}
+
+.about-container .aboutleft{
+  height: 80vh;
+}
+
+.about-container .aboutleft img{
+  width: 40vw;
+  margin: 25px 20px;
+  height: 70vh;
+  border-radius: 30px;
+  box-shadow: 2px 2px white;
+}
+
+.about-container .aboutright {
+  width: 55%;
+  /* border: 2px solid white; */
+  height: 95vh;
+  margin-right: 15px;
+  margin-top: 5%;
+  
+}
+
+.about-container .aboutright h3{
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.6rem;
+  color: gold;
+}
+
+.about-container .aboutright p{
+  color: white;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  justify-content: center;
+  margin: 5px 0px;
+}
+
+.about-container .aboutright a{
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 1.3rem;
+  border: 1px solid rgb(223, 214, 214);
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: 550;
+}
+
+.about-container .aboutright a:hover{
+  background-color: #cfd8eb;
+  color: black;
+}
+
+
+/* -------------------ThirdSection--------------------- */
+
+.thirdSection{
+  height: 80vh;
+  /* margin-top: 20px; */
+  margin-bottom: 100px;
+}
+
+
+.container {
+  max-width: 100vw;
+  height: 80vh;
+  margin: 20px;
+  border-radius: 25px;
+  /* background-color: #819eda; */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+  h1 {
+    color: gold;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+  
+
+  form{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(206, 193, 116);
+    margin-bottom: 20px;
+
+  }
+  
+  #fileInput {
+    margin-bottom: 20px;
+    width: 250px;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+
+  .upload{
+    width: 120px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    font-weight: bold;
+
+  }
+  
+  .upload:hover{
+    background-color: #7d95c9;
+    color: white;
+  }
+
+  
+  #chart {
+    width: 80%;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin-left: 10%;
+  }
+  
+  .tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 14px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .tooltip.visible {
+    visibility: visible;
+  }
+
+
+  /* ---------------------fourthSection------------------------ */
+
+  .fourthSection .ourTeam{
+    margin-top: 75px;
+    width: 100%;
+    height: 75vh;
+  }
+
+  .ourTeam h3{
+    color: gold;
+    font-size: 1.6rem;
+    text-align: center;
+
+  }
+
+  .ourTeam .teamSection{
+    height: 60vh;
+    width: 80%;
+    /* border: 2px solid white; */
+    margin: 10px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ourTeam .teamSection .box{
+    border: 2px solid white;
+    border-radius: 30px;
+    height: 47vh;
+    width: 25%;
+    margin: 0 25px;
+  }
+
+  .ourTeam .teamSection .box .imgBox{
+    width: 90%;
+    margin: 2.5% 5%;
+    height: 100%;
+    /* border: 2px solid red; */
+  }
+
+  .ourTeam .teamSection .box .imgBox img{
+    width: 60%;
+    margin: 2% 20%;
+  }
+
+  .ourTeam .teamSection .box .imgBox h4{
+    color: gold;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .ourTeam .teamSection .box .imgBox .span{
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .ourTeam .teamSection .box .imgBox a{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    padding: 4px;
+    height: 5px;
+    width: 5px;
+    border: 2px solid white;
+    border-radius: 50%;
+  
+  }
+
+  .ourTeam .teamSection .box .imgBox a i {
+    font-size: 1.5rem;
+    /* margin-top: 5px; */
+    margin: 1% 2.5%;
+    margin-top: 10px;
+    
+  }
+
+
+
+  /* --------------------Footer Section------------------- */
+
+
+  footer{
+    background-color: #0e0e1a;
+    /* height: 230px; */
+  }
+
+  .footer{
+    display: flex;
+    padding: 23px 122px;
+    color: white;
+    justify-content: space-around;
+  }
+
+  .footer ul{
+    list-style: none;
+    color: white;
+    line-height: 1.5;
+  }
+
+  .footer > div{
+    width: 230px;
+  }
+
+  footer .footer-right{
+    text-align: center;
+    color: white;
+    padding: 12px 0px;
+  }
+
+
+  /* <----------------------Responsive Website-------------------------> */
+
+  @media screen and (max-width : 900px) {
+
+    
+  }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Itim&family=Noto+Sans:wght@300&family=Oswald&family=Poppins:wght@400;700&family=Signika+Negative&family=Source+Code+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Graph Converter</div>
+        <div class="right">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html#secondSection">About</a></li>
+            <li><a href="index.html#fourthSection">Team</a></li>
+            <li><a href="#">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Welcome to <span class="yellow">Graph Converter</span>
+          <span id="element"></span>
+          <div class="buttons">
+            <button class="btn" id="btn"><a href="#thirdSection"> Explore Now</a></button>
+            <button class="btn" id="btn"><a href="#secondSection"> Know More</a></button>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="https://www.visme.co/wp-content/uploads/2021/06/visme-graph-maker-header.png" alt="" />
+        </div>
+      </section>
+
+      <hr>
+
+      <section id="secondSection" class="secondSection">
+        <div class="about-container">
+          <div class="aboutleft">
+            <img src="https://user-images.githubusercontent.com/57335825/90104877-da8f1900-dcf9-11ea-9e73-b96e3be620c6.png" alt="">
+          </div>
+          <div class="aboutright">  
+            <h3>About D3</h3>
+            <p>D3 allows you to bind arbitrary data to a Document Object Model (DOM), and then apply data-driven transformations to the document. For example, you can use D3 to generate an HTML table from an array of numbers. Or, use the same data to create an interactive SVG bar chart with smooth transitions and interaction.
+
+              <br><br>
+              D3 is not a monolithic framework that seeks to provide every conceivable feature. Instead, D3 solves the crux of the problem: efficient manipulation of documents based on data. This avoids proprietary representation and affords extraordinary flexibility, exposing the full capabilities of web standards such as HTML, SVG, and CSS. With minimal overhead, D3 is extremely fast, supporting large datasets and dynamic behaviors for interaction and animation. D3’s functional style allows code reuse through a diverse collection of official and community-developed modules.</p>
+
+              <br><br>
+              <a href="https://d3js.org/" target="_blank">Know More..</a>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="thirdSection" class="thirdSection">
+        <div class="container">
+          <h1>Upload Your File Here</h1>
+          <span id="element"></span>
+          <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput" />
+            <button type="submit" class="upload" id="upload">Upload</button>
+          </form>
+          <div id="chart"></div>
+          <div class="tooltip"></div>
+        </div>
+      </section>
+
+<hr>
+
+      <section class="fourthSection">
+        <div class="team">
+
+        </div>
+      </section>
+
+      <section class="fourthSection" id="fourthSection">
+        <div class="ourTeam">
+          <h3>Our Team</h3>
+          <div class="teamSection">
+            <div class="box">
+              <div class="imgBox">
+                <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png" alt="">
+                <h4>Reet Jain</h4>
+                <p class="span">Frontend Developer</p>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="https://clipart-library.com/img/1745492.png" alt="">
+                <h4>Tanvi Agrawal</h4>
+                <p class="span">Frontend Developer</p>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png" alt="">
+                <h4>Henil Shah</h4>
+                <p class="span">Backend Developer</p>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Graph Converter</h3>
+        </div>
+        <div class="footer-second">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-third">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-fourth">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        Copyright &#169; www.graphconverter.com | All Rights Reserved
+      </div>
+
+     </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Using d3 Library",
+        ],
+        typeSpeed: 65,
+      });
+    </script>
+    <script src="server.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+      document.getElementById("upload");
+      // const tooltip = d3.select('.tooltip');
+      const tooltip = d3.select(".tooltip");
+
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          upload.style.display='none';
+
+          const fileInput = document.getElementById("fileInput");
+          const file = fileInput.files[0];
+
+          const formData = new FormData();
+          formData.append("file", file);
+
+          fetch("/upload", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const chartData = data.map((d) => ({
+                values: Object.values(d).map(parseFloat),
+              }));
+
+              const numColumns = chartData.length;
+
+              const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+              const width =
+                document.getElementById("chart").offsetWidth -
+                margin.left -
+                margin.right;
+              const height = 300 - margin.top - margin.bottom;
+
+              const svg = d3
+                .select("#chart")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+              if (numColumns === 1) {
+                const x = d3
+                  .scaleBand()
+                  .domain(chartData[0].values.map((_, i) => i))
+                  .range([0, width])
+                  .padding(0.1);
+
+                const y = d3
+                  .scaleLinear()
+                  .domain([0, d3.max(chartData[0].values)])
+                  .range([height, 0]);
+
+                svg
+                  .selectAll("rect")
+                  .data(chartData[0].values)
+                  .enter()
+                  .append("rect")
+                  .attr("x", (d, i) => x(i))
+                  .attr("y", (d) => y(d))
+                  .attr("width", x.bandwidth())
+                  .attr("height", (d) => height - y(d))
+                  .attr("fill", "steelblue")
+                  .on("mouseover", (event, d) => {
+                    tooltip
+                      .html(`Value: ${d}`)
+                      .style("left", `${event.pageX}px`)
+                      .style("top", `${event.pageY}px`)
+                      .classed("visible", true);
+                  })
+                  .on("mouseout", () => {
+                    tooltip.classed("visible", false);
+                  });
+                const xAxis = d3.axisBottom(x);
+                const yAxis = d3.axisLeft(y);
+
+                svg
+                  .append("g")
+                  .attr("transform", `translate(0, ${height})`)
+                  .call(xAxis);
+
+                svg.append("g").call(yAxis);
+              } else if (numColumns === 2) {
+                const x = d3
+                  .scaleLinear()
+                  .domain(d3.extent(chartData[0].values))
+                  .range([0, width]);
+
+                const y = d3
+                  .scaleLinear()
+                  .domain(d3.extent(chartData[1].values))
+                  .range([height, 0]);
+
+                const line = d3
+                  .line()
+                  .x((d, i) => x(chartData[0].values[i]))
+                  .y((d, i) => y(chartData[1].values[i]));
+
+                svg
+                  .append("path")
+                  .datum(chartData[0].values)
+                  .attr("fill", "none")
+                  .attr("stroke", "steelblue")
+                  .attr("stroke-width", 1.5)
+                  .attr("d", line);
+
+                svg
+                  .selectAll("circle")
+                  .data(chartData[0].values)
+                  .enter()
+                  .append("circle")
+                  .attr("cx", (d, i) => x(chartData[0].values[i]))
+                  .attr("cy", (d, i) => y(chartData[1].values[i]))
+                  .attr("r", 4)
+                  .attr("fill", "steelblue")
+                  .on("mouseover", (event, d, i) => {
+                    tooltip
+                      .html(`X: ${d}, Y: ${chartData[1].values[i]}`)
+                      .style("left", `${event.pageX}px`)
+                      .style("top", `${event.pageY}px`)
+                      .classed("visible", true);
+                  })
+                  .on("mouseout", () => {
+                    tooltip.classed("visible", false);
+                  });
+              } else if (numColumns === 3) {
+                const x = d3
+                  .scaleLinear()
+                  .domain(d3.extent(chartData[0].values))
+                  .range([0, width]);
+
+                const y = d3
+                  .scaleLinear()
+                  .domain(d3.extent(chartData[1].values))
+                  .range([height, 0]);
+
+                const z = d3
+                  .scaleLinear()
+                  .domain(d3.extent(chartData[2].values))
+                  .range([4, 12]);
+
+                svg
+                  .selectAll("circle")
+                  .data(chartData[0].values)
+                  .enter()
+                  .append("circle")
+                  .attr("cx", (d, i) => x(chartData[0].values[i]))
+                  .attr("cy", (d, i) => y(chartData[1].values[i]))
+                  .attr("r", (d, i) => z(chartData[2].values[i]))
+                  .attr("fill", "steelblue")
+                  .on("mouseover", (event, d, i) => {
+                    tooltip
+                      .html(
+                        `X: ${d}, Y: ${chartData[1].values[i]}, Size: ${chartData[2].values[i]}`
+                      )
+                      .style("left", `${event.pageX}px`)
+                      .style("top", `${event.pageY}px`)
+                      .classed("visible", true);
+                  })
+                  .on("mouseout", () => {
+                    tooltip.classed("visible", false);
+                  });
+              } else {
+                // Add code for default graph
+                const x = d3
+                  .scaleBand()
+                  .domain(chartData.map((_, i) => i))
+                  .range([0, width])
+                  .padding(0.1);
+
+                const y = d3
+                  .scaleLinear()
+                  .domain([0, d3.max(chartData, (d) => d3.max(d.values))])
+                  .range([height, 0]);
+
+                svg
+                  .selectAll("rect")
+                  .data(chartData)
+                  .enter()
+                  .append("rect")
+                  .attr("x", (d, i) => x(i))
+                  .attr("y", (d) => y(d3.max(d.values)))
+                  .attr("width", x.bandwidth())
+                  .attr("height", (d) => height - y(d3.max(d.values)))
+                  .attr("fill", "steelblue")
+                  .on("mouseover", (event, d, i) => {
+                    const values = d.values.join(", ");
+                    tooltip
+                      .html(`Values: ${values}`)
+                      .style("left", `${event.pageX}px`)
+                      .style("top", `${event.pageY}px`)
+                      .classed("visible", true);
+                  })
+                  .on("mouseout", () => {
+                    tooltip.classed("visible", false);
+                  });
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+           
+
+          fileInput.value = ""; // Clear the input value after upload
+        });
+    </script>
+  </body>
+</html>
